@@ -1,7 +1,22 @@
 version: 2.1
-orbs:
-  node: circleci/node@3.0.0
+jobs:
+  deploy:
+    docker:
+      - image: circleci/node:10.16.0
+    steps:
+      - checkout
+      - add_ssh_keys:
+          fingerprints:
+            - "ea:26:b6:b4:86:9a:3f:df:cc:09:05:88:0a:cd:91:30"
+      - run:
+          name: Deploy Over SSH
+          command: |
+            ssh -o StrictHostKeyChecking=no $SSH_USER@$SSH_HOST "cd '$WEB_ROOT_DEV' && git stash && git pull origin master && npm install"
 workflows:
-  node-tests:
+  version: 2.1
+  build-and-deploy:
     jobs:
-      - node/test
+      - deploy:
+          filters:
+            branches:
+              only: master
