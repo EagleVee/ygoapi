@@ -2,10 +2,10 @@ import express from "express";
 import bodyParser from "body-parser";
 import cors from "cors";
 
-import { APPLICATION_PORT } from "./Config/remote";
+import { APPLICATION_PORT } from "./src/Config/remote";
 
-import PusherHelper from "./Common/PusherHelper";
-import Response from "./Common/Response";
+import PusherHelper from "./src/Common/PusherHelper";
+import Response from "./src/Common/Response";
 
 const app = express();
 app.use(cors());
