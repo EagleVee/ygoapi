@@ -4,7 +4,7 @@
   "description": "Vp Group NodeJS API",
   "main": "index.js",
   "scripts": {
-    "start": "node server.js",
+    "start": "node --exec babel-node server.js",
     "production": "pm2 start npm --name \"vpnode\" -- run start",
     "test": "test"
   },
