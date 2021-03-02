@@ -21,8 +21,9 @@
 
 ## Cách chạy chương trình tuần 3
 
-- Chạy `yarn install` hoặc `npm install`
-- Chạy `yarn start` hoặc `npm start`
+- Chạy `yarn install` hoặc `npm install`.
+- Chạy `yarn start` hoặc `npm start`.
+- Kiểm tra: Mở file [index.html](web_client/index.html) bằng trình duyệt.
 
 ## Kết quả của chương trình tuần 3
 
