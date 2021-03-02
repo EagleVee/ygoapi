@@ -1,154 +1,44 @@
 <!DOCTYPE html>
 <html lang="en">
+
 <head>
-    <meta charset="UTF-8"/>
-    <meta name="viewport" content="width=device-width, initial-scale=1"/>
-    <title>Random Generator</title>
-    <style>
-        .random-button {
-            border: 0;
-            margin-top: 20px;
-            width: 200px;
-            height: 50px;
-            background-color: #5cb85c;
-            display: flex;
-            align-items: center;
-            justify-content: center;
-            border-radius: 8px;
-            color: white;
-            cursor: pointer;
-            user-select: none;
-            box-shadow: 0 6px #999;
-        }
-
-        .random-button:hover {
-            background-color: #3e8e41
-        }
-
-        .random-button:active {
-            border: 0 !important;
-            background-color: #3e8e41;
-            box-shadow: 0 2px #666;
-            transform: translateY(4px);
-        }
-
-        .random-button:focus {
-            outline: 0;
-        }
-
-        .middle {
-            width: 100vw;
-            display: flex;
-            align-items: center;
-            justify-content: center;
-            flex-direction: column;
-        }
-
-        .text {
-            width: 200px;
-            font-size: 20px;
-            text-align: left;
-        }
-
-        .row {
-            display: flex;
-            flex-direction: row;
-            align-items: center;
-            justify-content: flex-end;
-        }
-
-        .column {
-            display: flex;
-            flex-direction: column;
-        }
-
-        .low-input {
-            width: 300px;
-        }
-
-        .high-input {
-            width: 300px;
-        }
-
-        .input {
-            width: 150px;
-            margin-left: 10px;
-            font-size: 20px;
-            padding: 5px 10px;
-        }
-
-        .leftover-container {
-            padding: 10px 20px;
-            width: 90vw;
-        }
-
-        .leftover {
-            font-size: 50px;
-        }
-
-        .checkbox {
-            width: 20px;
-            height: 20px;
-            cursor: pointer;
-        }
-
-        .range-container {
-            padding-top: 10px;
-            display: flex;
-        }
-    </style>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <title>API Practice Task</title>
 </head>
+
 <body>
-<div class="middle">
-    <p id="number" style="font-size: 100px">0</p>
-    <div class="column">
-        <label for="low" class="low-input row"
-        ><p class="text">BẮT ĐẦU:</p>
-            <input
-                    inputmode="numeric"
-                    type="number"
-                    id="low"
-                    class="input"
-                    value="0"
-                    onchange="setLow(this)"
-            /></label>
-        <label for="high" class="high-input row"
-        ><p class="text">KẾT THÚC:</p>
-            <input
-                    inputmode="numeric"
-                    type="number"
-                    id="high"
-                    class="input"
-                    value="0"
-                    onchange="setHigh(this)"
-            /></label>
-    </div>
-    <div style="padding-top: 10px;">
-        <label class="text">
-            <input class="checkbox" id="duplicate" type="checkbox" checked onclick="duplicateOnChange(this)"/>
-            LẶP
-        </label>
-        <label class="text">
-            <input class="checkbox" id="not-duplicate" type="checkbox" onclick="notDuplicateOnChange(this)"/>
-            KHÔNG LẶP
-        </label>
-        <button
-                ontouchstart=""
-                class="random-button"
-                onclick="generateNumber()"
-                style="font-size: 30px"
-        >
-            RANDOM
-        </>
-    </div>
-    <div class="leftover-container text">
-        CÒN LẠI:
-        <p class="leftover" id="leftover">0</p>
-    </div>
-</div>
+    <button id="getAPI">Get API</button>
+    <div id="output"></div>
 </body>
-<script src="script.js"/>
 <script>
+    document.getElementById('getAPI').addEventListener('click', getAPI);
+
+    function getAPI() {
+        fetch('http://localhost:5000/api/students')
+            .then((response) => response.json())
+            .then((data) => {
+                console.log(data);
+                let output = '<h2>Students</h2>';
+                data['data'].forEach(function (student) {
+                    output += `
+                        <ul>
+                            <li>ID: ${student.id}</li>
+                            <li>Name: ${student.full_name}</li>
+                            <li>Date of Birth: ${student.dob}</li>
+                            <li>Major: ${student.major}</li>
+                            <li>Class: ${student.class}</li>
+                            <li>Email: ${student.email}</li>
+                            <li>Admission Year: ${student.admission_year}</li>
+                            <li>Graduate Year: ${student.graduate_year}</li>
+                        </ul>
+                    `;
+                });
+                document.getElementById('output').innerHTML = output;
+            })
+    }
 
 </script>
+
 </html>

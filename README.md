@@ -35,3 +35,5 @@
 ![result_mobile.png](results/result_mobile.png)
 
 - Ứng dụng web, sử dụng HTML và JavaScript để request API:
+
+![result_web.png](results/result_web.png)
