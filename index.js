@@ -17,7 +17,7 @@ app.get("/", function(req, res) {
   });
 });
 
-app.get("/students", function(req, res) {
+app.get("/api/students", function(req, res) {
   const response = new Response(res);
   response.jsonSuccess(students);
 });
