@@ -1,0 +1,32 @@
+export const students = [
+  {
+    id: "17021359",
+    full_name: "Nguyễn Ngọc Anh Vũ",
+    dob: "10/07/1999",
+    major: "Khoa học máy tính",
+    class: "K62CACLC1",
+    email: "17021359@vnu.edu.vn",
+    admission_year: "2017",
+    graduate_year: "2021",
+  },
+  {
+    id: "17021344",
+    full_name: "Trần Việt Tiến",
+    dob: "22/12/1999",
+    major: "Khoa học máy tính",
+    class: "K62CACLC1",
+    email: "17021344@vnu.edu.vn",
+    admission_year: "2017",
+    graduate_year: "2021",
+  },
+  {
+    id: "17021348",
+    full_name: "Hà Minh Tuấn",
+    dob: "22/06/1999",
+    major: "Khoa học máy tính",
+    class: "K62CACLC1",
+    email: "17021348@vnu.edu.vn",
+    admission_year: "2017",
+    graduate_year: "2021",
+  },
+];
