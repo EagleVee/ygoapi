@@ -2,7 +2,7 @@
 
 ### Project này được tạo ra cho môn học Kiến trúc hướng dịch vụ (INT3505_20)
 
-##Nhóm bao gồm:
+## Nhóm bao gồm:
 
 - Nguyễn Ngọc Anh Vũ
 - Trần Việt Tiến
