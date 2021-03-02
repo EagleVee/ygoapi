@@ -10,8 +10,8 @@
 
 ## Mục lục:
 
-- [Tuần 1: Java client-server](https://github.com/EagleVee/soa_assignment/src/week1)
-- [Tuần 2: Java RMI](https://github.com/EagleVee/soa_assignment/src/week2_rmi)
+- [Tuần 1: Java client-server](https://github.com/EagleVee/soa_assignment/tree/master/src/week1)
+- [Tuần 2: Java RMI](https://github.com/EagleVee/soa_assignment/tree/master/src/week2_rmi)
 - [Tuần 3: RESTful API](src)
 
 ## Github:
