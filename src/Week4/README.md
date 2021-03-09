@@ -5,7 +5,7 @@
 - Chạy `yarn start:rpc-client` hoặc `npm start:grpc-client` trên một terminal khác.
 - Kiểm tra: Mở trình duyệt, đi đến `localhost:5002/student/17021359`.
 
-## Kết quả của chương trình tuần 3
+## Kết quả của chương trình tuần 4
 
 - API chạy trong Postman:
 
